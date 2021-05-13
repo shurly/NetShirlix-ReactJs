@@ -5,7 +5,9 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 export default ({title, items}) => {
 
-  const [scrollx, setScrollx] = useState(0);
+
+
+  const [scrollx, setScrollx] = useState(-400);
 
   const handleLeftArrow = () => {
     let x = scrollx + Math.round(window.innerWidth / 2);
@@ -17,14 +19,14 @@ export default ({title, items}) => {
 
   const handleRightArrow = () => {
     let x = scrollx - Math.round(window.innerWidth / 2);
-    let listW = items.results.length + 150;
+    let listW = items.results.length * 150;
     if((window.innerWidth - listW) > x){
         x = (window.innerWidth - listW) - 60;
     }
     setScrollx(x);
   }
 
-return (
+  return (
         <div className="movieRow">
           <h2>{title}</h2>
 
